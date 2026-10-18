@@ -1,0 +1,145 @@
+.brand-glow:hover {
+            animation: whiteBlink 0.8s infinite alternate ease-in-out;
+        }
+
+        @keyframes whiteBlink {
+            0% {
+                opacity: 1;
+                filter: drop-shadow(0 0 3px #ffffff);
+            }
+
+            50% {
+                opacity: 0.55;
+                filter: drop-shadow(0 0 14px #ffffff) drop-shadow(0 0 25px rgba(255, 255, 255, 0.9));
+            }
+
+            100% {
+                opacity: 1;
+                filter: drop-shadow(0 0 3px #ffffff);
+            }
+        }
+
+        /* Modern ticker container */
+        .ticker-wrap {
+            overflow: hidden;
+            white-space: nowrap;
+            background: #111;
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .ticker-move {
+            display: inline-block;
+            animation: marquee 18s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100vw);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+/* Top Pill Badge */
+.esports-badge {
+    background-color: rgba(30, 35, 60, 0.6);
+    color: #7b88d4;
+    border: 1px solid rgba(85, 105, 180, 0.4);
+    backdrop-filter: blur(8px);
+}
+
+.esports-badge .badge-dot {
+    color: #4b6cb7;
+}
+
+/* Purple-Blue Gradient Heading */
+.gradient-purple-blue {
+    background: linear-gradient(90deg, #9b72cf 0%, #765cd6 40%, #5d75f2 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+ /* ================= BACKGROUND ZOOM & SLIDER CSS ================= */
+.hero-section {
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: #0b0c10;
+        }
+
+        .hero-bg-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            animation: zoomFade 16s infinite;
+            z-index: 1;
+        }
+
+        /* Pehli Background Image (Aap apna local image path bhi de sakte hain) */
+        .hero-bg-slide:nth-child(1) {
+            background-image: url('./image/three.webp');
+            animation-delay: 0s;
+        }
+
+        /* Dusri Background Image */
+        .hero-bg-slide:nth-child(2) {
+            background-image: url('./image/three.jpg');
+            animation-delay: 8s;
+        }
+
+        /* Dark overlay taaki text clear dikhe */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(10, 10, 18, 0.75) 20%, rgba(10, 10, 18, 0.95) 90%);
+            z-index: 2;
+        }
+
+        /* Text content layer */
+        .hero-content {
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Aage aane aur piche jaane wala zoom effect */
+        @keyframes zoomFade {
+            0% {
+                opacity: 0;
+                transform: scale(1);
+            }
+
+            10% {
+                opacity: 0.35;
+            }
+
+            45% {
+                opacity: 0.35;
+            }
+
+            55% {
+                opacity: 0;
+                transform: scale(1.15);
+                /* Slow zoom forward */
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(1);
+            }
+        }
